@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Hangman Game</h1>
+    <p id="clue">Clue: <span>(Click 'Reveal Clue')</span></p>
+    <p id="wordDisplay"></p>
+    <p>Incorrect Guesses: <span id="wrongGuesses">0</span>/6</p>
+    <p>Time Left: <span id="timer">30</span> sec</p>
+    <p>Highest Score: <span id="highScore">0</span></p>
+    <div id="keyboard"></div>
+    <button onclick="revealAnswer()">Reveal Answer</button>
+
+    <button class="settings-btn" onclick="toggleSettings()">⚙️</button>
+
+    <div class="settings-panel" id="settingsPanel">
+        <button class="close-btn" onclick="toggleSettings()">✖</button>
+
+        
+        <label class="switch">
+            <input type="checkbox" id="themetoggle" onchange="toggleTheme()">
+            <span class="slider"></span>
+        </label>
+
+        <div class="controls">
+            <button onclick="resetGame()">New Game</button>
+            <button onclick="newGame()">Restart</button>
+            <label for="timeSelect" class="word">Set Timer:</label>
+            <select id="timeSelect" onchange="changeTimer()">
+                <option value="15">15 sec</option>
+                <option value="30" selected>30 sec</option>
+                <option value="45">45 sec</option>
+                <option value="60">1 min</option>
+            </select>
+        </div>
+    </div>
+    <div id="popup" class="popup"></div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
